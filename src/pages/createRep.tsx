@@ -1,15 +1,39 @@
 import React, { useState } from "react";
 import { Annotation, IAnnotation } from "react-mark-image";
+import {withPageAuthRequired} from '@auth0/nextjs-auth0';
+import { useGlobalReport } from "@/stateMan/context";
+import { useGlobalList } from "@/stateMan/context";
+import { useGlobalTable } from "@/stateMan/context";
 //import bodyTemplate from "@/assets/bodyTemplate.png"
 type createRepProps = {};
 
 const createRep: React.FC<createRepProps> = () => {
-  const [annotations, setAnnotations] = useState<IAnnotation[]>([]);
+  const {annotation,setAnnotation} = useGlobalReport();
+  const{list,setList}=useGlobalList();
+  const {tabledata,setTable}=useGlobalTable();
   const [repName, setRepName] = useState("");
+  const addList=()=>
+  {
+    setList((prevState)=>[...prevState,annotation])
+  }
+  const addTable=()=>
+  {
+    setTable((prevState)=>[...prevState,repName]);
+    console.log(tabledata);
+  }
   const handleSubmit = () => {
-    console.log(annotations);
-    console.log(repName);
-    setRepName(" ");
+    //console.log(annotation);
+    //console.log(repName);
+    addList();
+    addTable();
+    
+    setRepName("");
+    setAnnotation([]);
+    // const input=document.getElementById('reportname');
+    // if(input)
+    // {
+    //   input.value=''
+    // }
   };
   const handleName = (e: React.FormEvent<HTMLInputElement>) => {
     setRepName(e.currentTarget.value);
@@ -26,7 +50,7 @@ const createRep: React.FC<createRepProps> = () => {
         <div>
           <input
             type="text"
-            id="first_name"
+            id="reportname"
             onChange={handleName}
             className=" ml-10 bg-slate-500 border border-gray-300 text-white  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
             placeholder="Report Name"
@@ -40,10 +64,10 @@ const createRep: React.FC<createRepProps> = () => {
             "https://img.freepik.com/premium-vector/fashion-template-man-different-poses-9-head-size-technical-drawing_683023-70.jpg"
           }
           alt="Cats"
-          annotations={annotations}
-          onAnnotationsUpdate={setAnnotations}
+          annotations={annotation}
+          onAnnotationsUpdate={setAnnotation}
           className={`text-black`}
-          style={{}}
+          
           //allowTouch
         />
       </div>
@@ -51,3 +75,4 @@ const createRep: React.FC<createRepProps> = () => {
   );
 };
 export default createRep;
+export const getServerSideProps = withPageAuthRequired();
