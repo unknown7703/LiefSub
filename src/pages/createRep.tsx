@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Annotation, IAnnotation } from "react-mark-image";
 import {withPageAuthRequired} from '@auth0/nextjs-auth0';
-import { useGlobalReport } from "@/stateMan/context";
-import { useGlobalList } from "@/stateMan/context";
-import { useGlobalTable } from "@/stateMan/context";
+import { useGlobalReport } from "../stateMan/context";
+import { useGlobalList } from "../stateMan/context";
+import { useGlobalTable } from "../stateMan/context";
 //import bodyTemplate from "@/assets/bodyTemplate.png"
 type createRepProps = {};
 

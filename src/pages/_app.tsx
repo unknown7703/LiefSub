@@ -3,7 +3,7 @@ import type { AppProps } from "next/app";
 import * as React from "react";
 import Layout from "../components/layout/layout";
 import { UserProvider } from "@auth0/nextjs-auth0/client";
-import { GlobalReport,GlobalList,GlobalTable } from "@/stateMan/context";
+import { GlobalReport,GlobalList,GlobalTable } from "../stateMan/context";
 import { useState } from "react";
 import { IAnnotation } from "react-mark-image";
 
