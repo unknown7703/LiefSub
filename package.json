@@ -2,24 +2,16 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "ts-node": "ts-node --compiler-options '{\"module\":\"CommonJS\"}'",
-    "seed":"esbuild prisma/seed.ts --outfile=node_modules/tmp-seed.cjs --bundle --format=cjs --external:prisma --external:@prisma/client && node node_modules/tmp-seed.cjs --preview-feature"
+    "lint": "next lint"
   },
   "dependencies": {
-    "@apollo/client": "3.7.4",
     "@auth0/nextjs-auth0": "^3.2.0",
     "@next/env": "^13.5.6",
     "@prisma/client": "^4.8.1",
-    "apollo-server-micro": "^3.12.1",
-    "graphql": "16.6.0",
-    "graphql-yoga": "3.3.0",
-    "micro-cors": "^0.1.1",
     "next": "13.5.4",
     "react": "^18",
     "react-dom": "^18",
