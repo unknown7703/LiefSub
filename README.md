@@ -16,3 +16,7 @@ regarding backend- I am unable to fetch data with graphql as it is not accepting
 the full schema of annotation object as few data types are not supported by graphql like (scalar array of decimal).
 So currently the app only use useContext data .
 
+for local deployment -
+
+clone app then go to auth0 and make your project , make a .env file and add the required fields available in your project on auth0 .
+reffer - https://auth0.com/docs/quickstart/webapp/nextjs/01-login
