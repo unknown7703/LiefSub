@@ -5,9 +5,9 @@ import { useGlobalReport } from "../stateMan/context";
 import { useGlobalList } from "../stateMan/context";
 import { useGlobalTable } from "../stateMan/context";
 //import bodyTemplate from "@/assets/bodyTemplate.png"
-type createRepProps = {};
+type CreateRepProps = {};
 
-const createRep: React.FC<createRepProps> = () => {
+const CreateRep: React.FC<CreateRepProps> = () => {
   const {annotation,setAnnotation} = useGlobalReport();
   const{list,setList}=useGlobalList();
   const {tabledata,setTable}=useGlobalTable();
@@ -74,5 +74,5 @@ const createRep: React.FC<createRepProps> = () => {
     </div>
   );
 };
-export default createRep;
+export default CreateRep;
 export const getServerSideProps = withPageAuthRequired();

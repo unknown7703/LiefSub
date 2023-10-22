@@ -5,11 +5,11 @@ import { useGlobalList } from "../stateMan/context";
 import { useGlobalTable } from "../stateMan/context";
 import { useGlobalReport } from "../stateMan/context";
 
-type viewRepProps = {
+type ViewRepProps = {
     
 };
 
-const viewRep:React.FC<viewRepProps> = () => {
+const ViewRep:React.FC<ViewRepProps> = () => {
     const {list} =useGlobalList();
     const {tabledata}=useGlobalTable();
     const {annotation}=useGlobalReport();
@@ -58,5 +58,5 @@ const viewRep:React.FC<viewRepProps> = () => {
         </div>
     </>);
 }
-export default viewRep;
+export default ViewRep;
 export const getServerSideProps = withPageAuthRequired();
