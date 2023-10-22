@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "type": "module",
+  
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -37,8 +37,5 @@
     "prisma": "^4.8.1",
     "tailwindcss": "^3",
     "typescript": "^5"
-  },
-  "prisma": {
-    "seed": "ts-node prisma/seed.ts"
   }
 }
