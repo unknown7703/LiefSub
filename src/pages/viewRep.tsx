@@ -30,7 +30,7 @@ const ViewRep:React.FC<ViewRepProps> = () => {
         // eslint-disable-line
         data =tabledata.map(function(tabledata,index){
             // eslint-disable-line
-            return <div key={index}><button value={index} onClick={tableClick}><li >{tabledata}</li></button></div>;
+            return <div key={index}><button key={index} value={index} onClick={tableClick}><li key={index}>{tabledata}</li></button></div>;
         }) 
     } catch (error) {
         return <li>no reprot</li>
