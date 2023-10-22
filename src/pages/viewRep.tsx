@@ -13,20 +13,24 @@ const ViewRep:React.FC<ViewRepProps> = () => {
     const {list} =useGlobalList();
     const {tabledata}=useGlobalTable();
     const {annotation}=useGlobalReport();
-    const nodata=["no data"]
+    
     
     const[num,setNum]=useState(Number);
     var showlist=list[num];
-    var data=[<li>reports</li>];
+    // eslint-disable-line
+    var data=[<li key={20}>reports</li>];
     const tableClick=(e:React.MouseEvent<HTMLButtonElement>)=>{
         const numm=e.currentTarget.value;
         const nume=+numm;
         setNum(nume);
         showlist=list[num];
     }
+    // eslint-disable-line
     try {
+        // eslint-disable-line
         data =tabledata.map(function(tabledata,index){
-            return <div><button value={index} onClick={tableClick}><li >{tabledata}</li></button></div>;
+            // eslint-disable-line
+            return <div key={index}><button value={index} onClick={tableClick}><li >{tabledata}</li></button></div>;
         }) 
     } catch (error) {
         return <li>no reprot</li>
